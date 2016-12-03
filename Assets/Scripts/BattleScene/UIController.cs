@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Reflection;
 
 public class UIController : MonoBehaviour {
 
@@ -132,6 +133,7 @@ public class UIController : MonoBehaviour {
 			if(current <= actionPriority.Count){
 				current++;
 			}
+
 		}
 //		-------------------------------------------------------------------------------
 	}
