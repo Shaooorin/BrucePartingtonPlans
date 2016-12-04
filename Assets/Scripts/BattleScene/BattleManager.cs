@@ -4,27 +4,45 @@ using System.Collections.Generic;
 
 public class BattleManager : MonoBehaviour {
 
-	List<BattleObject> battleObj;
+	public List<BattleObject> battleObj = new List<BattleObject> ();
+	public List<Enemy> enemyOnBattlefield = new List<Enemy>();
+	public List<BattlePlayer> playerOnBattlefield = new List<BattlePlayer>();
 
-	// Use this for initialization
 	void Start () {
+		//BattleObject型のリストに敵も味方も全員を格納する
 		GameObject[] bObj = GameObject.FindGameObjectsWithTag ("BattleObject");
 		foreach(GameObject go in bObj){
-			Debug.Log (go.name);
-			BattleObject bo = null;
-			if(go is BattlePlayer){
-				bo = go.GetComponent<BattlePlayer> ();
+			BattleObject battleO;
+			if(go.GetComponent<BattlePlayer>() == true){
+				battleO = go.GetComponent<BattlePlayer> ();
+				battleObj.Add (battleO);
+			}else if(go.GetComponent<Enemy>() == true){
+				battleO = go.GetComponent<Enemy> ();
+				battleObj.Add (battleO);
 			}
-			if(go is Enemy){
-				bo = go.GetComponent<Enemy> ();	
-				Debug.Log (bo);
-			}
-			battleObj.Add (bo);
-
 		}
+
+		//battleObjからプレイヤーとエネミーの実体を分ける
+		foreach(BattleObject bo in battleObj){
+			if(bo is BattlePlayer){
+				//場に存在するプレイヤーだけをリストに格納
+				playerOnBattlefield.Add ((BattlePlayer)bo);
+			}else if(bo is Enemy){
+				//場に存在するエネミーだけをリストに格納
+				enemyOnBattlefield.Add ((Enemy)bo);
+			}
+		}
+
+//		確認用のログ出力テスト
+//		foreach(BattlePlayer bp in playerOnBattlefield){
+//			Debug.Log(bp);
+//		}
+//		foreach(Enemy em in enemyOnBattlefield){
+//			Debug.Log(em);
+//		}
+
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 	
 	}
