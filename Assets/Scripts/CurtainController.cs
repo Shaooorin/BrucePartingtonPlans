@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class BattleController : MonoBehaviour {
+public class CurtainController : MonoBehaviour {
 
 	Image curtainColor;
 	public bool isStartBattle = false;

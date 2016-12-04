@@ -12,7 +12,7 @@ public class BattlePlayer : BattleObject {
 	private int playerAgillity = 100;
 	private int playerMoney = 3000;
 
-//	Enemy enemy;
+	Enemy enemy;
 
 	void Awake(){
 		base.objName = playerName;
@@ -23,11 +23,11 @@ public class BattlePlayer : BattleObject {
 		base.deffence = playerDeffence;
 		base.agillity = playerAgillity;
 		base.money = playerMoney;
-//		enemy = GameObject.Find ("Enemy").GetComponent<Enemy> ();
+		enemy = GameObject.Find ("Enemy").GetComponent<Enemy> ();
 	}
 
 	void Start () {
-//		Attack (this, CulcuratedDamage(this.strength,enemy.deffence));
+		Attack (this,enemy,CulcuratedDamage(this.strength,enemy.enemyDEF));
 	}
 
 	void Update () {

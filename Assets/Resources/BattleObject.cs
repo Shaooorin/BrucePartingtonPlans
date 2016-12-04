@@ -28,9 +28,11 @@ public class BattleObject : MonoBehaviour {
 	/// <summary>
 	/// 攻撃用関数。someoneにculcDamageのダメージを与える。culcDamageにはculcuratedDamage()などの戻り値を推奨。
 	/// </summary>
-	protected void Attack(BattleObject someone,int culcDamage){
-		someone.hp -= culcDamage;
-		Debug.Log (someone.objName + " に " + culcDamage + " の ダメージ！");
+	protected void Attack(BattleObject who,BattleObject you,int culcDamage){
+//		Debug.Log (you.hp);
+		you.hp -= culcDamage;
+		Debug.Log (who.objName + " が " + you.objName + " に " + culcDamage + " の ダメージ！");
+//		Debug.Log (you.hp);
 	}
 
 //	protected void hoge(){

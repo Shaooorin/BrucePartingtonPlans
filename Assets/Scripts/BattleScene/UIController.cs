@@ -22,7 +22,7 @@ public class UIController : MonoBehaviour {
 	Image magicMenu;
 	Image runawayMenu;
 	Text fightWinText;
-	BattleController battleCon;
+	CurtainController curtainCon;
 	BattlePlayer battlePlayer;
 //	Enemy enemy;
 	GameObject fightWin;
@@ -50,7 +50,7 @@ public class UIController : MonoBehaviour {
 
 		battlePlayer = GameObject.Find ("BattlePlayer").GetComponent<BattlePlayer> ();
 //		enemy = GameObject.Find ("Enemy").GetComponent<Enemy> ();
-		battleCon = GameObject.Find ("BattleController").GetComponent<BattleController> ();
+		curtainCon = GameObject.Find ("BattleController").GetComponent<CurtainController> ();
 
 		fightWinText = GameObject.Find ("FightWindow/Text").GetComponent<Text> ();
 		fightWin = GameObject.Find ("FightWindow");
@@ -65,11 +65,11 @@ public class UIController : MonoBehaviour {
 
 	void Update () {
 		
-		if(Input.GetKeyDown(KeyCode.UpArrow) && inputMode == InputMode.NEUTRAL && battleCon.isStartBattle == true){
+		if(Input.GetKeyDown(KeyCode.UpArrow) && inputMode == InputMode.NEUTRAL && curtainCon.isStartBattle == true){
 			ActionWinCountDown ();
 		}
 
-		if(Input.GetKeyDown(KeyCode.DownArrow) && inputMode == InputMode.NEUTRAL && battleCon.isStartBattle == true){
+		if(Input.GetKeyDown(KeyCode.DownArrow) && inputMode == InputMode.NEUTRAL && curtainCon.isStartBattle == true){
 			ActionWinCountUp ();
 		}
 
@@ -103,7 +103,7 @@ public class UIController : MonoBehaviour {
 		}
 
 		//『たたかう』選択時にスペースキー入力
-		if (hogehoge [i] == 1 && Input.GetKeyDown (KeyCode.Space) && battleCon.isStartBattle == true 
+		if (hogehoge [i] == 1 && Input.GetKeyDown (KeyCode.Space) && curtainCon.isStartBattle == true 
 			&& inputMode == InputMode.NEUTRAL) {
 			//ここでリストにAddする
 			//ListにAddする場合、タイミングが重要
@@ -112,7 +112,7 @@ public class UIController : MonoBehaviour {
 			inputMode = InputMode.ACTIVE;
 		}
 
-		if(Input.GetKeyUp(KeyCode.Space) && battleCon.isStartBattle == true && inputMode == InputMode.ACTIVE){
+		if(Input.GetKeyUp(KeyCode.Space) && curtainCon.isStartBattle == true && inputMode == InputMode.ACTIVE){
 			fightWinText.text = "";
 			fightWin.SetActive (false);
 			inputMode = InputMode.NEUTRAL;
@@ -123,11 +123,11 @@ public class UIController : MonoBehaviour {
 //		かつ、キーが押されてから順番に処理を実行する
 		if(Input.GetKeyDown(KeyCode.E) && (current < actionPriority.Count)){
 			if(actionPriority[current] is BattlePlayer){
-				Debug.Log ("プレイヤーの攻撃");
+				
 			}
 
 			if(actionPriority[current] is Enemy){
-				Debug.Log ("モンスターの攻撃");
+				
 			}
 
 			if(current <= actionPriority.Count){

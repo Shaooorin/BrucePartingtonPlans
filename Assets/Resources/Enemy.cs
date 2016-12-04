@@ -12,7 +12,7 @@ public class Enemy  : BattleObject{
 	private int enemyHp;
 	private int enemyMp;
 	private int enemySTR;
-	private int enemyDEF;
+	public int enemyDEF;
 	private int enemyAGI;
 	private int enemyMoney;
 
