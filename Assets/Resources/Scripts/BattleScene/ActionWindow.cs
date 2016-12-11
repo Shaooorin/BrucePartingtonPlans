@@ -3,14 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 
-public class ActionWindow : GameMaster {
+public class ActionWindow : MonoBehaviour {
 
-	GameObject fight;
 	GameObject parent;
 	RectTransform rect;
 	Text text;
-
 	AudioManager audioM;
+	GameMaster gameMaster;
 
 	bool hoge = false;
 
@@ -21,6 +20,7 @@ public class ActionWindow : GameMaster {
 		text = GameObject.Find ("Message").GetComponent<Text> ();
 		parent = GameObject.Find ("Canvas");
 		audioM = GameObject.Find ("AudioManager").GetComponent<AudioManager> ();
+		gameMaster = parent.GetComponent<GameMaster> ();
 	}
 
 	void Start () {
@@ -35,23 +35,25 @@ public class ActionWindow : GameMaster {
 			hoge = true;
 			audioM.PopUp ();
 			Debug.Log ("current : " + current);
-			text.text = intro[current];
+			text.text = gameMaster.intro[current];
 		}
 
-		if(Input.GetKeyDown(KeyCode.Space) && current != intro.Count){
+		if(Input.GetKeyDown(KeyCode.Space) && current != gameMaster.intro.Count){
 			current++;
 			audioM.Choice ();
 			Debug.Log ("current : " + current);
-			if(current != intro.Count){
+			if(current != gameMaster.intro.Count){
 				TextUpdate ();
 			}
 		}
-		if(current == intro.Count && Input.GetKeyUp(KeyCode.Space)){
+		if(current == gameMaster.intro.Count && Input.GetKeyUp(KeyCode.Space)){
 			Destroy(this.gameObject);
 		}
 	}
 		
 	void TextUpdate(){
-		text.text = intro[current];
+		text.text = gameMaster.intro[current];
 	}
+
+
 }

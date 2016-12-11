@@ -30,11 +30,9 @@ public class Enemy  : BattleObject{
 			int c = Random.Range (1,3);
 			if(c == 1){
 				enemyData = EnemyHashtable.enemyList["enemy001"];
-				Debug.Log ("enemy001");
 			}
 			if(c == 2){
 				enemyData = EnemyHashtable.enemyList["enemy002"];
-				Debug.Log ("enemy002");
 			}
 		}else if(colEnemy != null){
 			enemyData = EnemyHashtable.enemyList[colEnemy];

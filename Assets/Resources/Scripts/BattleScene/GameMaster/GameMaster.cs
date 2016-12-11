@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class GameMaster : MonoBehaviour {
 	
@@ -8,9 +9,11 @@ public class GameMaster : MonoBehaviour {
 	protected List<Enemy> enemyOnBattlefield = new List<Enemy>();
 	protected List<BattlePlayer> playerOnBattlefield = new List<BattlePlayer>();
 
-	protected static List<string> intro = new List<string> ();
+	public List<string> intro = new List<string> ();
 
 	protected GameObject messageBox;
+
+//	public bool initiative = false;
 
 	void Awake () {
 		messageBox = (GameObject)Resources.Load ("MessageWin");
@@ -39,8 +42,6 @@ public class GameMaster : MonoBehaviour {
 				enemyOnBattlefield.Add ((Enemy)bo);
 			}
 		}
-
-
 	}
 
 	void Start(){
@@ -55,12 +56,25 @@ public class GameMaster : MonoBehaviour {
 //			Debug.Log (foo);
 //		}
 
-		Debug.Log (intro.Count);
-
 //		foreach(string str in intro){
 //			Debug.Log(str);
 //		}
-
-
 	}
+
+	public void GenarateFightMessage(){
+//		initiative = true;
+//		if(initiative == true && (GameObject.Find("FightWin") == false)){
+//			GameObject fightMessage = (GameObject)Resources.Load ("FightWin");
+//			Instantiate (fightMessage);
+//		}
+		bool hoge = false;
+		Toggle tog = GameObject.Find("Fight/Toggle").GetComponent<Toggle>();
+		if (tog.isOn == true) {
+			hoge = true;
+		} else {
+			hoge = false;
+		}
+		Debug.Log (this.name + ".Toggle01.value = " + hoge);
+	}
+
 }

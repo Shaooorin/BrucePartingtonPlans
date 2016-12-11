@@ -10,7 +10,7 @@ public class AudioManager : MonoBehaviour {
 	public AudioClip auClip003;
 
 	void Awake () {
-		audioS = GameObject.Find ("AudioManager").GetComponents<AudioSource> ();
+		audioS = GetComponents<AudioSource> ();
 		audioS [0].clip = auClip001;
 		audioS [1].clip = auClip002;
 		audioS [2].clip = auClip003;

@@ -40,7 +40,7 @@ public class UIController : MonoBehaviour {
 	void Start () {
 //		actWin = GameObject.FindGameObjectsWithTag ("ActionWindow");
 //		インデックスは実行のたびに順不同になるんだって！！
-//		transform.SetSiblingIndex();とかで順番をつかまえるらしい
+//		transform.GetSiblingIndex();とかで順番をつかまえる
 //		Debug.Log (actWin[0].name + " 要素0番、" + actWin[1].name + " 要素1番、" + actWin[2].name + " 要素2番、" + actWin[3].name + " 要素3番、");
 
 		fightMenu = gameObject.transform.FindChild ("FightMenu").GetComponent<Image> ();
