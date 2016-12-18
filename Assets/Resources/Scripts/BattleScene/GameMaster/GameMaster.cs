@@ -11,13 +11,9 @@ public class GameMaster : MonoBehaviour {
 
 	public List<string> intro = new List<string> ();
 
-	protected GameObject messageBox;
-
 //	public bool initiative = false;
 
 	void Awake () {
-		messageBox = (GameObject)Resources.Load ("MessageWin");
-
 		//"BattleObject"tagのついているオブジェクトをフィールドから一斉に取得
 		GameObject[] bObj = GameObject.FindGameObjectsWithTag ("BattleObject");
 		foreach(GameObject gameO in bObj){
@@ -45,36 +41,9 @@ public class GameMaster : MonoBehaviour {
 	}
 
 	void Start(){
-		Instantiate (messageBox);
-
 		foreach(Enemy em in enemyOnBattlefield){
 			string hoge = (((string)em.objName) + " が あらわれた");
 			intro.Add(hoge);
 		}
-
-//		foreach(string foo in intro){
-//			Debug.Log (foo);
-//		}
-
-//		foreach(string str in intro){
-//			Debug.Log(str);
-//		}
 	}
-
-	public void GenarateFightMessage(){
-//		initiative = true;
-//		if(initiative == true && (GameObject.Find("FightWin") == false)){
-//			GameObject fightMessage = (GameObject)Resources.Load ("FightWin");
-//			Instantiate (fightMessage);
-//		}
-		bool hoge = false;
-		Toggle tog = GameObject.Find("Fight/Toggle").GetComponent<Toggle>();
-		if (tog.isOn == true) {
-			hoge = true;
-		} else {
-			hoge = false;
-		}
-		Debug.Log (this.name + ".Toggle01.value = " + hoge);
-	}
-
 }
