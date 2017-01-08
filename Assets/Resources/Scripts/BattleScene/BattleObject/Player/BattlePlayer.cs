@@ -3,33 +3,63 @@ using System.Collections;
 
 public class BattlePlayer : BattleObject {
 
-	public string playerName = "つるたろう";
-	private int playerLevel = 1;
-	private int playerHp = 100;
-	private int playerMp = 000;
-	private int playerStrength = 25;
-	private int playerDeffence = 50;
-	private int playerAgillity = 100;
-	private int playerMoney = 3000;
+	[HideInInspector]
+	public string playerName;
 
-//	Enemy enemy;
+	[HideInInspector]
+	public int playerLv;
+
+	[HideInInspector]
+	public int playerHp;
+
+	[HideInInspector]
+	public int playerMp;
+
+	[HideInInspector]
+	public int playerSTR;
+
+	[HideInInspector]
+	public int playerDEF;
+
+	[HideInInspector]
+	public int playerAGI;
+
+	[HideInInspector]
+	public int playerEXP;
+
+//	PlayerHashTable plaerHash;
+	Hashtable playerData;
 
 	void Awake(){
+		int c = Random.Range (1,3);
+		if(c == 1){
+			playerData = PlayerHashTable.playerList["player001"];
+		}
+		if(c == 2){
+			playerData = PlayerHashTable.playerList["player002"];
+		}
+
+		playerName = (string)playerData["playerName"];
+		playerLv = (int)playerData["playerLV"];
+		playerHp = (int)playerData["playerHp"];
+		playerMp = (int)playerData["playerMp"];
+		playerSTR = (int)playerData["playerSTR"];
+		playerDEF = (int)playerData["playerDEF"];
+		playerAGI = (int)playerData["playerAGI"];
+		playerEXP = (int)playerData["playerEXP"];
+
 		base.objName = playerName;
-		base.level = playerLevel;
+		base.level = playerLv;
 		base.hp = playerHp;
 		base.mp = playerMp;
-		base.strength = playerStrength;
-		base.deffence = playerDeffence;
-		base.agillity = playerAgillity;
-		base.money = playerMoney;
-//		enemy = GameObject.Find ("Enemy").GetComponent<Enemy> ();
+		base.strength = playerSTR;
+		base.deffence = playerDEF;
+		base.agillity = playerAGI;
+		base.experience = playerEXP;
 	}
 
 	void Start () {
-//		Attack (this,enemy,CulcuratedDamage(this.strength,enemy.enemyDEF));
+		
 	}
 
-//	void Update () {
-//	}
 }

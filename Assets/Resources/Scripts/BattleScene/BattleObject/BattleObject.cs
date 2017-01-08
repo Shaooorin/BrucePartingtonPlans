@@ -3,7 +3,9 @@ using System.Collections;
 
 public class BattleObject : MonoBehaviour {
 
+	[HideInInspector]
 	public string objName;
+
 	protected int level;
 	protected int hp;
 	protected int mp;
@@ -11,6 +13,7 @@ public class BattleObject : MonoBehaviour {
 	protected int deffence;
 	protected int agillity;
 	protected int money;
+	protected int experience;
 
 	/// <summary>
 	/// ダメージ計算関数。Mathf.Max((1stPara - 2ndPara),1~5) = return int;
@@ -28,13 +31,10 @@ public class BattleObject : MonoBehaviour {
 	/// <summary>
 	/// 攻撃用関数。someoneにculcDamageのダメージを与える。culcDamageにはculcuratedDamage()などの戻り値を推奨。
 	/// </summary>
-	protected void Attack(BattleObject who,BattleObject you,int culcDamage){
+	public void Attack(BattleObject who,BattleObject you,int culcDamage){
 //		Debug.Log (you.hp);
 		you.hp -= culcDamage;
 		Debug.Log (who.objName + " が " + you.objName + " に " + culcDamage + " の ダメージ！");
 //		Debug.Log (you.hp);
 	}
-
-//	protected void hoge(){
-//	}
 }

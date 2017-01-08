@@ -16,6 +16,5 @@ C:\Users\camblian\Documents\GitHub\BrucePartingtonPlans\BrucePartingtonPlans\Tem
 C:\Users\camblian\Documents\GitHub\BrucePartingtonPlans\BrucePartingtonPlans\Temp\bin\Debug\UnityEditor.xml
 C:\Users\camblian\Documents\GitHub\BrucePartingtonPlans\BrucePartingtonPlans\Temp\bin\Debug\UnityEngine.UI.xml
 C:\Users\camblian\Documents\GitHub\BrucePartingtonPlans\BrucePartingtonPlans\Temp\bin\Debug\UnityEngine.Networking.xml
-C:\Users\camblian\Documents\GitHub\BrucePartingtonPlans\BrucePartingtonPlans\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\Users\camblian\Documents\GitHub\BrucePartingtonPlans\BrucePartingtonPlans\obj\Debug\Assembly-CSharp.dll
 C:\Users\camblian\Documents\GitHub\BrucePartingtonPlans\BrucePartingtonPlans\obj\Debug\Assembly-CSharp.pdb

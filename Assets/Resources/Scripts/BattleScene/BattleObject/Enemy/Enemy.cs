@@ -5,26 +5,40 @@ using UnityEngine.UI;
 
 public class Enemy  : BattleObject{
 
-//	エネミークラスに特有の変数　敵の画像の管理番号
+	//Enemy Status------------------------------------------
+	[HideInInspector]
 	public string enemyTextureName;
 
-	private string enemyName;
-	private int enemyHp;
-	private int enemyMp;
-	private int enemySTR;
-	public int enemyDEF;
-	private int enemyAGI;
-	private int enemyMoney;
-//	private int enemyExp;
+	[HideInInspector]
+	public string enemyName;
 
-//	int current = 0;
-	EnemyHashtable enemyHash;
+	[HideInInspector]
+	public int enemyHp;
+
+	[HideInInspector]
+	public int enemyMp;
+
+	[HideInInspector]
+	public int enemySTR;
+
+	[HideInInspector]
+	public int enemyDEF;
+
+	[HideInInspector]
+	private int enemyAGI;
+
+	[HideInInspector]
+	public int enemyMoney;
+
+	[HideInInspector]
+	public int enemyExp;
+	//-----------------------------------------------------
+
 	Hashtable enemyData;
-//	UIController uiCon;
 
 	void Awake(){
 //		敵の番号を取得して流し込む
-//		めんどくさいのでnullチェック方式にした
+//		テスト用のnullチェック方式バージョン
 		string colEnemy = Player.colEnemy;
 		if(colEnemy == null){
 			int c = Random.Range (1,3);
@@ -49,7 +63,7 @@ public class Enemy  : BattleObject{
 		enemyDEF = (int)enemyData["enemyDEF"];
 		enemyAGI = (int)enemyData["enemyAGI"];
 		enemyMoney = (int)enemyData["enemyMoney"];
-//		enemyExp = (int)enemyData["enemyExp"];
+		enemyExp = (int)enemyData["enemyExp"];
 
 		base.objName = enemyName;
 		base.hp = enemyHp;
@@ -58,19 +72,10 @@ public class Enemy  : BattleObject{
 		base.deffence = enemyDEF;
 		base.agillity = enemyAGI;
 		base.money = enemyMoney;
-
-//		Debug.Log ("敵の名前 : " + enemyName + 
-//			"、敵の画像 : " + enemyTextureName +
-//			"、敵のHP : " + enemyHp + 
-//			"、敵のMP : " + enemyMp +
-//			"、敵の攻撃力 : " + enemySTR + 
-//			"、敵の防御力 : " + enemyDEF +
-//			"、敵の素早さ : " + enemyAGI +
-//			"、敵の所持金 : " + enemyMoney);
 	}
 
 	void Start(){
-//		uiCon = GameObject.Find ("ActionWindow").GetComponent<UIController> ();
+		
 	}
 
 	void Update(){

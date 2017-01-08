@@ -9,15 +9,13 @@ public class GameMaster : MonoBehaviour {
 	protected List<Enemy> enemyOnBattlefield = new List<Enemy>();
 	protected List<BattlePlayer> playerOnBattlefield = new List<BattlePlayer>();
 
-	public List<string> intro = new List<string> ();
-
 //	public bool initiative = false;
 
 	void Awake () {
 		//"BattleObject"tagのついているオブジェクトをフィールドから一斉に取得
 		GameObject[] bObj = GameObject.FindGameObjectsWithTag ("BattleObject");
 		foreach(GameObject gameO in bObj){
-			//ついでにエネミーとプレイヤーをそれぞれ実体化
+			//エネミーとプレイヤーをそれぞれ実体化し、別々の配列に格納
 			BattleObject battleO;
 			if(gameO.GetComponent<BattlePlayer>() == true){
 				battleO = gameO.GetComponent<BattlePlayer> ();
@@ -38,12 +36,21 @@ public class GameMaster : MonoBehaviour {
 				enemyOnBattlefield.Add ((Enemy)bo);
 			}
 		}
+
+		//敵味方それぞれをヒエラルキーの順番でソート
+		enemyOnBattlefield.Sort ((a,b) => a.transform.GetSiblingIndex() - b.transform.GetSiblingIndex());
+		playerOnBattlefield.Sort ((a,b) => a.transform.GetSiblingIndex() - b.transform.GetSiblingIndex());
 	}
 
 	void Start(){
-		foreach(Enemy em in enemyOnBattlefield){
-			string hoge = (((string)em.objName) + " が あらわれた");
-			intro.Add(hoge);
-		}
+		
+//		foreach(BattlePlayer pl in playerOnBattlefield){
+//			pl.gameObject.GetComponent<BattleObject> ().Attack (pl,enemyOnBattlefield[0],3);
+//		}
+
+//		foreach(Enemy em in enemyOnBattlefield){
+//			string hoge = (((string)em.name) + " が あらわれた");
+//			Debug.Log (hoge);
+//		}
 	}
 }

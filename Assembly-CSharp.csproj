@@ -51,8 +51,11 @@
      <Compile Include="Assets\Resources\Scripts\BattleScene\BattleObject\Enemy\EnemyHastable.cs" />
      <Compile Include="Assets\Resources\Scripts\BattleScene\BattleObject\Enemy\EnemyImageController.cs" />
      <Compile Include="Assets\Resources\Scripts\BattleScene\BattleObject\Player\BattlePlayer.cs" />
+     <Compile Include="Assets\Resources\Scripts\BattleScene\BattleObject\Player\CharInit.cs" />
+     <Compile Include="Assets\Resources\Scripts\BattleScene\BattleObject\Player\PlayerHashTable.cs" />
      <Compile Include="Assets\Resources\Scripts\BattleScene\GameMaster\BattleManager.cs" />
      <Compile Include="Assets\Resources\Scripts\BattleScene\GameMaster\GameMaster.cs" />
+     <Compile Include="Assets\Resources\Scripts\BattleScene\UI\WhoFieldInit.cs" />
      <Compile Include="Assets\Resources\Scripts\BattleScene\UIController.cs" />
      <Compile Include="Assets\Resources\Scripts\CurtainController.cs" />
      <Compile Include="Assets\Resources\Scripts\FieldScene\Player.cs" />
