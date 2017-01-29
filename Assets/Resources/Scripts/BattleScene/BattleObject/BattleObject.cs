@@ -6,6 +6,8 @@ public class BattleObject : MonoBehaviour {
 	[HideInInspector]
 	public string objName;
 
+//	[System.NonSerialized]
+
 	protected int level;
 	protected int hp;
 	protected int mp;
