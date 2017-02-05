@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class BattlePlayer : BattleObject {
 
@@ -56,6 +57,18 @@ public class BattlePlayer : BattleObject {
 		base.deffence = playerDEF;
 		base.agillity = playerAGI;
 		base.experience = playerEXP;
+
+//		それぞれの持つ技の管理(テスト用/こうやって使うメモ)　
+//		for(int i = 0;i < 5;i++){
+//			this.playerSkill.Add ((int)Random.Range(1,6));
+//		}
+//		foreach(int ps in base.playerSkill){
+//			Debug.Log (playerName + "の技" + ps +" : " + SkillDictionary.skillDic[ps][2]);
+//		}
+
+		for(int i = 1; i < ((int)(Random.Range(1,6))); i++){
+			base.playerSkill.Add (i);
+		}
 	}
 
 	void Start () {

@@ -133,7 +133,6 @@ public class UIController : MonoBehaviour {
 			if(current <= actionPriority.Count){
 				current++;
 			}
-
 		}
 //		-------------------------------------------------------------------------------
 	}

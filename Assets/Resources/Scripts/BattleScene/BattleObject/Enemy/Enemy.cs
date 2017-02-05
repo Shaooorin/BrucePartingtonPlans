@@ -72,6 +72,10 @@ public class Enemy  : BattleObject{
 		base.deffence = enemyDEF;
 		base.agillity = enemyAGI;
 		base.money = enemyMoney;
+
+		for(int i = 1; i < ((int)(Random.Range(1,6))); i++){
+			base.playerSkill.Add (i);
+		}
 	}
 
 	void Start(){

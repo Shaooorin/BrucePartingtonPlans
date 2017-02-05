@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class BattleObject : MonoBehaviour {
 
@@ -18,6 +19,12 @@ public class BattleObject : MonoBehaviour {
 	protected int experience;
 
 	/// <summary>
+	/// BattleObjectが既に覚えている技のリスト
+	/// </summary>
+	[HideInInspector]
+	public List<int> playerSkill = new List<int>();
+
+	/// <summary>
 	/// ダメージ計算関数。Mathf.Max((1stPara - 2ndPara),1~5) = return int;
 	/// </summary>
 	/// <returns>int</returns>
@@ -34,9 +41,7 @@ public class BattleObject : MonoBehaviour {
 	/// 攻撃用関数。someoneにculcDamageのダメージを与える。culcDamageにはculcuratedDamage()などの戻り値を推奨。
 	/// </summary>
 	public void Attack(BattleObject who,BattleObject you,int culcDamage){
-//		Debug.Log (you.hp);
 		you.hp -= culcDamage;
 		Debug.Log (who.objName + " が " + you.objName + " に " + culcDamage + " の ダメージ！");
-//		Debug.Log (you.hp);
 	}
 }

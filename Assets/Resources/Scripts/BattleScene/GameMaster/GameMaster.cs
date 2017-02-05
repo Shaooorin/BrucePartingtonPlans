@@ -4,10 +4,13 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 
 public class GameMaster : MonoBehaviour {
-	
-	protected List<BattleObject> allBattleObj = new List<BattleObject> ();
-	protected List<Enemy> enemyOnBattlefield = new List<Enemy>();
-	protected List<BattlePlayer> playerOnBattlefield = new List<BattlePlayer>();
+
+	[HideInInspector]
+	public List<BattleObject> allBattleObj = new List<BattleObject> ();
+	[HideInInspector]
+	public List<Enemy> enemyOnBattlefield = new List<Enemy>();
+//	[HideInInspector]
+	public List<BattlePlayer> playerOnBattlefield = new List<BattlePlayer>();
 
 //	public bool initiative = false;
 

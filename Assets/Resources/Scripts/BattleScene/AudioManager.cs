@@ -15,8 +15,7 @@ public class AudioManager : MonoBehaviour {
 		audioS [1].clip = auClip002;
 		audioS [2].clip = auClip003;
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		
 	}

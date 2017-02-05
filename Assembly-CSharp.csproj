@@ -55,10 +55,13 @@
      <Compile Include="Assets\Resources\Scripts\BattleScene\BattleObject\Player\PlayerHashTable.cs" />
      <Compile Include="Assets\Resources\Scripts\BattleScene\GameMaster\BattleManager.cs" />
      <Compile Include="Assets\Resources\Scripts\BattleScene\GameMaster\GameMaster.cs" />
+     <Compile Include="Assets\Resources\Scripts\BattleScene\SkillDictionary.cs" />
      <Compile Include="Assets\Resources\Scripts\BattleScene\UI\WhoFieldInit.cs" />
      <Compile Include="Assets\Resources\Scripts\BattleScene\UIController.cs" />
      <Compile Include="Assets\Resources\Scripts\CurtainController.cs" />
      <Compile Include="Assets\Resources\Scripts\FieldScene\Player.cs" />
+     <Compile Include="Assets\Resources\Scripts\Node.cs" />
+     <Compile Include="Assets\Resources\Scripts\NodeGenerator.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
